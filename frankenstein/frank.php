@@ -1,25 +1,31 @@
 <?php
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $num1=$_POST['num1'];
     $num2=$_POST['num2'];
     $opera=$_POST['opera'];
     switch ($opera) {
         case 'suma':
-            echo "Seleccionaste la opción 1";
+            $p=$num1+$num2;
+            $resultado="Resultado es: ".$p;
             break;
         case 'res':
-            echo "Seleccionaste la opción 2";
+            $p=$num1-$num2;
+            $resultado="Resultado es: ".$p;
             break;
         case 'divi':
-            echo "Seleccionaste la opción 3";
+            $p=$num1/$num2;
+            $resultado="Resultado es: ".$p;
+            break;
+        case 'mult':
+            $p=$num1*$num2;
+            $resultado="Resultado es: ".$p;
             break;
         default:
             echo "Opción no válida";
             break;
-}
+    }
+} 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,9 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </style>
 </head>
 <body>
-    <form methot="POST"> <!-- Se puede describir el metodo pero sino entonces por defecto se pondra como metodo GET -->
-    <div class="container mt-4" style="width: 25rem;">
-        <form>
+    <form method="POST"> <!-- Se puede describir el metodo pero sino entonces por defecto se pondra como metodo GET -->
+        <div class="container my-4" style="width: 25rem;">
           <div class="form-group">
             <label for="num1">Numero 1:</label>
             <input type="number" name="num1" class="form-control" id="num1" placeholder="Ingresa primer numero">
@@ -61,8 +66,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <option value="mult">Multiplicar</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary">Calcular</button>
-        </form>
+          <button type="submit" class="btn btn-primary mb-4">Calcular</button>
+        <div>
+    </form>
+
+        
+        <?php  if(isset($resultado)){?>
+            <h5><?php echo $resultado ?> </h5>
+        <?php }?>
+        </div>
       </div>
 <!--         <table>
             <tr>

@@ -15,5 +15,6 @@
      * Esto se utiliza para hacer bloques de codigo para no usar la tediosa forma se hacer cosas como concatenaciones u otro metodos
      * $_POST es una superglobal que se utiliza para recopilar datos enviados a través de una solicitud HTTP utilizando el método POST. Cuando se envía un formulario HTML con el método POST, los datos se envían al servidor en el cuerpo de la solicitud HTTP, en lugar de ser parte de la URL como ocurre con el método GET
     */
+    echo "<br>difes<br>";
 
 ?>

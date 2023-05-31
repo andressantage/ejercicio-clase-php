@@ -1,4 +1,3 @@
-
 <!-- Al archivo que tiene php con ajax y otros lenguajes en el html se conoce como Frankeinstein -->
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +11,18 @@
     <form action="api.php" methot="POST"> <!-- Se puede describir el metodo pero sino entonces por defecto se pondra como metodo GET -->
         <input type="text" name="nombre" placeholder="Nombre"><br>
         <input type="text" name="apellido" placeholder="Apellido"><br>
-        <input type="text" name="edad" placeholder="Edad"><br>
+        <input type="number" name="edad" placeholder="Edad"><br>
+        <input type="radio" name="genero" value="masculino"><label for="masculino">Masculino</label><br>
+        <input type="radio" name="genero" value="femenino"><label for="femenino">Femenino</label><br>
+        <select name="nacionalidad">
+            <option value="colombiano">Colombiano</option>
+            <option value="venezolano">Venezolano</option>
+        </select>
+        <label>Pasatiempos</label><br>
+        <input type="checkbox" name="pasatiempo[]" value="programar"><label>Programar</label><br>
+        <input type="checkbox" name="pasatiempo[]" value="cocinar"><label>Cocinar</label><br>
+        <input type="checkbox" name="pasatiempo[]" value="musica"><label>Musica</label><br>
+        <input type="checkbox" name="pasatiempo[]" value="lavar_ropa"><label>Lavar ropa</label><br>
         <input type="submit" value="Enviar">
     </form>    
 </body>
